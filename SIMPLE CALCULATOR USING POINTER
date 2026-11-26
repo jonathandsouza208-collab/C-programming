@@ -1,0 +1,66 @@
+#include <stdio.h>
+int add(int num1,int num2){
+    return num1+num2;
+}
+
+int sub(int num1,int num2){
+    return num1-num2;
+}
+
+int mul(int num1,int num2){
+    return num1*num2;
+}
+
+int div(int num1,int num2){
+    return num1/num2;
+}
+
+
+int main(){
+
+    int a,b,ch;
+    printf("Enter the first number: \n");
+    scanf("%d",&a);
+    printf("Enter the second number: \n\n");
+    scanf("%d",&b);
+
+    printf("=====CALCULATOR MENU=====\n");
+    printf("1.Addition\n");
+    printf("2.Subtraction\n");
+    printf("3.Multiplication\n");
+    printf("4.Division\n");
+    printf("Enter your choice: ");
+    scanf("%d",&ch);
+
+    int (*result)(int,int);
+
+    switch(ch){
+
+        case 1:
+        
+        result=add;
+        
+        break;
+        case 2:
+        
+        result=sub;
+        
+        break;
+        case 3:
+        
+        result=mul;
+        
+        break;
+        case 4:
+        
+        result=div;
+        
+        break;
+        default:
+        printf("Invalid Choice");
+        break;
+        
+    }
+    printf("Result = %d",result(a,b));
+    return 0;
+}
