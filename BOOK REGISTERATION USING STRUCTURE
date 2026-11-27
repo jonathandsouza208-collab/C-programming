@@ -1,0 +1,38 @@
+#include <stdio.h>
+// WAP IN C TO PERFORM A BOOK REGISTERATION USING STRUCTURE
+//BOOK ID,TITLE,AUTHOR,PRICE
+
+struct author_detail{
+    char name[20];
+    int age;
+};
+
+
+struct book_details{
+    int book_id;
+    struct author_detail author;
+    char title[50];
+    float price;
+}d1;
+
+int main(){
+
+    printf("Enter Book id\n");
+    scanf("%d",&d1.book_id);
+    printf("Enter Author name\n");
+    scanf("%19s",d1.author.name);
+    printf("Enter Author age\n");
+    scanf("%d",&d1.author.age);
+    printf("Enter title\n");
+    scanf("%49s",d1.title);
+    printf("Enter book price\n");
+    scanf("%f",&d1.price);
+
+    printf("Book id is: %d\n",d1.book_id);
+    printf("Author name is: %s\n",d1.author.name);
+    printf("Author age is: %d\n",d1.author.age);
+    printf("title is:%s\n",d1.title);
+    printf("Book price is:%.2f\n",d1.price);
+
+    return 0;
+}
